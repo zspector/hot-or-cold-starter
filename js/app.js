@@ -18,6 +18,12 @@ $(document).ready(function(){
 		/*--- Game play functions ---*/
 		$("#guessButton").click(function(event) {
 			submitGuess(event);
+			$('#userGuess').focus();
+		})
+		.keyup(function(event) {
+			if (event.keyCode === 13) {
+				submitGuess();
+			}
 		});
 });
 var answer = 0;
